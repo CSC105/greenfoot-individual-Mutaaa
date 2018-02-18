@@ -10,6 +10,7 @@ public class player extends Actor
 {
     private int speed;
     private int ySpeed;
+    private int animationCount = 0;
     /**
      * Act - do whatever the player wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -25,9 +26,12 @@ public class player extends Actor
         String[] str = new String[36];
         for (int i = 1; i < str.length; i++){
             str[i] = "Flamingo" + i + ".png";
-            setImage(str[i]);
+            animationCount++;
+            if(animationCount == 120){
+                setImage(str[i]);
+                animationCount = 0;
+            }
             
-            System.out.println(i);
         }
     }
     
