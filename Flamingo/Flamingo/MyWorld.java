@@ -11,7 +11,11 @@ public class MyWorld extends World
     private int imageCount = 0;
 
     private GreenfootImage bgImage = new GreenfootImage("Head01.png");
-
+    private long lastTime = 0;
+    Counter counter = new Counter();
+    
+    private Player player;
+    
     /**
      * Constructor for objects of class MyWorld.
      * 
@@ -27,6 +31,11 @@ public class MyWorld extends World
     public void act(){
         imageCount -= 5;
         drawBackgroundImage();
+        long temp = System.nanoTime();
+        if( (temp - lastTime)*1.0/1000000000 > 2 ){
+          addObject( new Candy(player, counter), 800, 300 );
+          lastTime = temp;
+        }
     }
 
     public void drawBackgroundImage(){
@@ -44,7 +53,12 @@ public class MyWorld extends World
      */
     private void prepare()
     {
-        player player = new player();
-        addObject(player,95,452);
+        player = new Player();
+        addObject(player,95,390);
+        addObject(counter,700,50);
+    }
+    
+    public Counter getCounter(){
+        return counter;
     }
 }

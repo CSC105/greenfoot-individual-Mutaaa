@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Player extends Actor
+public class player extends Actor
 {
     private int speed;
     private int ySpeed;
@@ -17,10 +17,9 @@ public class Player extends Actor
      */
     public void act() 
     {
-        Actor candy = getOneIntersectingObject(Candy.class);  
+        // Add your action code here.
         switchImage();
         jumper();
-        tryToEat();
     }    
     
     public void switchImage(){
@@ -56,9 +55,5 @@ public class Player extends Actor
                 
             }
         }
-    }
-    
-    public void tryToEat(){
-        
     }
 }
