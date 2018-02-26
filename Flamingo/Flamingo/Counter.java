@@ -6,8 +6,11 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
+
+
 public class Counter extends Actor
 {
+    GreenfootSound eat = new GreenfootSound("eat.mp3");
     int score = 0;
     /**
      * Act - do whatever the Counter wants to do. This method is called whenever
@@ -21,5 +24,6 @@ public class Counter extends Actor
     
     public void addScore(){
         score++;
+        eat.play();
     }
 }

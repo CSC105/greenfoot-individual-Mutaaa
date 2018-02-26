@@ -18,6 +18,7 @@ public class Candy extends Actor
     private Player player;
     private Counter counter;
     
+    
     public Candy(Player player,Counter counter) 
     {
         candy = getImage();
@@ -29,7 +30,7 @@ public class Candy extends Actor
     
     public void act(){
         setLocation( getX()-3, getY() );   
-        if( getX() > 95 && getX() < 160 && player.getY() < 405 ){
+        if(player.inTheWorld && getX() > 95 && getX() < 160 && player.getY() < 405 ){
             counter.addScore();
             getWorld().removeObject(this);
           

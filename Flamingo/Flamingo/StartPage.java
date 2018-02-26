@@ -16,7 +16,7 @@ public class StartPage extends World
     public StartPage()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(600, 400, 1); 
-        addObject( new PlayButton(), 300, 200 );
+        super(800, 601, 1); 
+        addObject( new PlayButton(), 400, 300 );
     }
 }

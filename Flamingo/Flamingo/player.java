@@ -11,6 +11,7 @@ public class Player extends Actor
     private int speed;
     private int ySpeed;
     private int animationCount = 0;
+    public boolean inTheWorld;
     /**
      * Act - do whatever the player wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -20,7 +21,7 @@ public class Player extends Actor
         Actor candy = getOneIntersectingObject(Candy.class);  
         switchImage();
         jumper();
-        tryToEat();
+
     }    
     
     public void switchImage(){
@@ -28,7 +29,7 @@ public class Player extends Actor
         for (int i = 1; i < str.length; i++){
             str[i] = "Flamingo" + i + ".png";
             animationCount++;
-            if(animationCount == 120){
+            if(animationCount == 250){
                 setImage(str[i]);
                 animationCount = 0;
             }
@@ -37,7 +38,7 @@ public class Player extends Actor
     }
     
     public void jumper(){
-        int groundLevel = 450;
+        int groundLevel = 445;
         boolean onGround = (getY() == groundLevel);
         
         if (!onGround) {
@@ -58,7 +59,11 @@ public class Player extends Actor
         }
     }
     
-    public void tryToEat(){
+    public void retryGame(){
+        inTheWorld = false;
+        getWorld().removeObject(this);
+        
+        
         
     }
 }
