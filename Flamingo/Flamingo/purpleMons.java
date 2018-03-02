@@ -3,10 +3,10 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Write a description of class purpleMons here.
  * 
- * @author (your name) 
+ * @Kornkanok Sangwichien
  * @version (a version number or a date)
  */
-public class purpleMons extends Actor
+public class PurpleMons extends Actor
 {
     /**
      * Act - do whatever the purpleMons wants to do. This method is called whenever
@@ -17,7 +17,7 @@ public class purpleMons extends Actor
     int purpleMonsWidth;
     private Player player;
     
-    public purpleMons(Player player) 
+    public PurpleMons(Player player) 
     {
         purpleMons = getImage();
         purpleMonsWidth = purpleMons.getWidth();

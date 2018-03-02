@@ -21,6 +21,10 @@ public class Button extends Actor
         if (Greenfoot.mouseClicked(this)){
             action();     
         }
+        
+        if(Greenfoot.isKeyDown("r")){
+            action();
+        }
     }
     
     protected void action() 

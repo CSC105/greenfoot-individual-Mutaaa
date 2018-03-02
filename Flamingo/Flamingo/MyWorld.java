@@ -3,7 +3,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Write a description of class MyWorld here.
  * 
- * @author (your name) 
+ * @Kornkanok Sangwichien
  * @version (a version number or a date)
  */
 public class MyWorld extends World
@@ -53,7 +53,7 @@ public class MyWorld extends World
 
             if (spawnCounter > 100) {
                 spawnCounter = 0;
-                addObject(new purpleMons(player), 810, 510);
+                addObject(new PurpleMons(player), 810, 510);
             }
             spawnCounter++;
 
@@ -104,7 +104,7 @@ public class MyWorld extends World
     }
 
     public void over(){
-        reButton reButton = new reButton();
+        ReButton reButton = new ReButton();
         addObject(reButton,400,300);
         bgSound.stop();
         die.play();
